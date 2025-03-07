@@ -1,0 +1,42 @@
+/* Section Icons */
+.section-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    z-index: 1;
+    animation: float 6s infinite ease-in-out;
+}
+
+.left-icon {
+    left: -60px; /* Posisi di kiri */
+}
+
+.right-icon {
+    right: -60px; /* Posisi di kanan */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-60%) rotate(10deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .left-icon {
+        left: -40px;
+    }
+
+    .right-icon {
+        right: -40px;
+    }
+}
