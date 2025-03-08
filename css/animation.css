@@ -1,3 +1,25 @@
+
+/* Style dasar tombol */
+.custom-btn-awal {
+    background-color: #007bff; /* Warna biru */
+    color: white; /* Warna teks putih */
+    border: none; /* Hilangkan border */
+    padding: 10px 20px; /* Padding untuk ukuran tombol */
+    border-radius: 5px; /* Sudut tombol yang sedikit melengkung */
+    cursor: pointer; /* Ubah kursor saat dihover */
+    transition: background-color 0.3s ease; /* Transisi perubahan warna */
+}
+
+/* Style saat tombol dihover */
+.custom-btn-awal:hover {
+    background-color: #000000; /* Warna hitam saat dihover */
+}
+
+/* Style saat tombol diklik */
+.custom-btn-awal:active {
+    background-color: #000000; /* Warna hitam saat diklik */
+    transform: scale(0.98); /* Efek tekan saat diklik */
+}
 /* Section Icons */
 .section-icon {
     position: absolute;
