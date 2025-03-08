@@ -20,6 +20,18 @@
     background-color: #000000; /* Warna hitam saat diklik */
     transform: scale(0.98); /* Efek tekan saat diklik */
 }
+
+/* Pesan Pengingat */
+.pengingat {
+    color: #6c757d; /* Warna teks abu-abu untuk mode terang */
+    font-size: 14px; /* Ukuran teks */
+    margin-bottom: 16px; /* Jarak bawah */
+}
+
+/* Mode Gelap untuk Pesan Pengingat */
+body.dark-mode .pengingat {
+    color: #a8a8a8; /* Warna teks abu-abu muda untuk mode gelap */
+}
 /* Section Icons */
 .section-icon {
     position: absolute;
