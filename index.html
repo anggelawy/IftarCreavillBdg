@@ -563,14 +563,17 @@
             // Ambil komentar dari Firebase secara realtime
             const commentsRef = ref(database, 'komentar');
             onValue(commentsRef, (snapshot) => {
-                komentarList = []; // Reset komentarList setiap kali data diambil
-                snapshot.forEach((childSnapshot) => {
-                    const komentar = childSnapshot.val();
-                    komentar.id = childSnapshot.key;
-                    komentarList.push(komentar);
-                });
-                renderKomentar(komentarList); // Render komentar setelah data diambil
+            komentarList = []; // Reset komentarList setiap kali data diambil
+            snapshot.forEach((childSnapshot) => {
+                const komentar = childSnapshot.val();
+                komentar.id = childSnapshot.key;
+                komentarList.push(komentar);
             });
+        
+            komentarList.reverse(); // Balik urutan komentar terbaru ke atas
+            renderKomentar(komentarList); // Render komentar setelah data diambil
+        });
+
 
             // Fungsi untuk menghapus komentar
             window.deleteComment = (id) => {
