@@ -807,4 +807,19 @@ body.dark-mode .control-box .btn-circle:hover {
       width: 100%; /* Card besar memenuhi lebar layar di mobile */
     }
   }
+  @media (max-width: 768px) {
+    #home {
+      background-image: none !important; /* Hilangkan background image */
+    }
+  }
+
+  /* Aturan untuk perangkat desktop (lebar layar > 768px) */
+  @media (min-width: 769px) {
+    #home {
+      background-image: url("assets/img/Foto1.jpg"); /* Tampilkan background image */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+  }
 }
