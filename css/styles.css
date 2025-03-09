@@ -256,6 +256,7 @@ body.dark-mode .btn-custom:active {
 
 .dark-mode-toggle {
   left: 20px;
+  display: none;
 }
 /* Mode Gelap untuk Ikon Matahari dan Play/Pause */
 body.dark-mode .fa-moon,        /* Ikon bulan (dark mode) */
