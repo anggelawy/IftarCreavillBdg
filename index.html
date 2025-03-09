@@ -60,6 +60,16 @@
 
     <!-- Main Content -->
     <main id="main-content" class="container text-center my-5" style="display: none;">
+        <!-- Video Background untuk Desktop -->
+        <video autoplay muted loop id="desktop-video" class="video-background">
+            <source src="assets/video/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Video Background untuk Mobile -->
+        <video autoplay muted loop id="mobile-video" class="video-background">
+            <source src="assets/video/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <h1 class="display-4" data-aos="fade-down">Undangan Iftar Ramadhan</h1>
         <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
             <img src="assets/img/logo-creavill.png" alt="Logo Creavill" class="logo">
@@ -67,10 +77,6 @@
         <p class="lead" data-aos="fade-up" data-aos-delay="200">Kepada Keluarga Besar Creavill Bandung</p>
         <p data-aos="fade-up" data-aos-delay="400">Kami mengundang Anda untuk menghadiri acara buka puasa bersama dalam
             rangka menyambut bulan suci Ramadhan.</p>
-        <!-- <p data-aos="fade-up" data-aos-delay="600">Acara akan diselenggarakan pada:</p>
-        <p data-aos="fade-up" data-aos-delay="800"><strong>Hari/Tanggal:</strong> Sabtu, 25 Maret 2023</p>
-        <p data-aos="fade-up" data-aos-delay="1000"><strong>Waktu:</strong> 17.30 - Selesai</p>
-        <p data-aos="fade-up" data-aos-delay="1200"><strong>Tempat:</strong> Ruang Serbaguna Creavill</p> -->
         <button class="custom-btn-awal mt-3" data-aos="fade-up" data-aos-delay="1400" onclick="openInvitation()">
             <i class="fas fa-envelope-open"></i> Buka Undangan
         </button>
@@ -108,6 +114,15 @@
         <!-- Section 1: Quotes -->
         <section id="quotes" class="section-content" data-aos="fade-up">
             <div class="container text-center position-relative">
+                <!-- Ikon Love Pertama (Kiri Bawah) -->
+                <img src="assets/img/meteor-rain-unscreen.gif" id="love-icon-1" class="love-icon float-vertical"
+                    style="left: 10%; bottom: 10%;" alt="Love Icon">
+
+                <!-- Ikon Love Kedua (Kanan Atas) -->
+                <img src="assets/img/meteor-rain-unscreen.gif" id="love-icon-2" class="love-icon float-horizontal"
+                    style="right: 10%; top: 10%;" alt="Love Icon">
+
+                <!-- Ikon Section -->
                 <svg class="section-icon" data-aos="fade-right" data-aos-delay="200" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24" width="100" height="100">
                     <path
@@ -115,7 +130,7 @@
                         fill="#FFD700" />
                 </svg>
                 <blockquote class="blockquote">
-                    <p class="mb-0" style="font-size: 1.5em;">إنَّ الصَّومَ جُنَّةٌ</p>
+                    <p class="mb-0" style="font-size: 1.5em">إنَّ الصَّومَ جُنَّةٌ</p>
                     <footer class="blockquote-footer">“Puasa adalah perisai.”</footer>
                 </blockquote>
             </div>
@@ -124,22 +139,32 @@
         <!-- Section 2: Dresscode -->
         <section id="dresscode" class="section-content" data-aos="fade-up">
             <div class="container text-center position-relative">
+                <!-- Ikon Love Pertama (Kiri Bawah) -->
+                <img src="assets/img/moon.gif" id="love-icon-1" class="love-icon" style="left: 10%; bottom: 10%;"
+                    alt="Love Icon">
+
+                <!-- Ikon Love Kedua (Kanan Atas) -->
+                <img src="assets/img/moon.gif" id="love-icon-2" class="love-icon" style="right: 10%; top: 10%;"
+                    alt="Love Icon">
+
+                <!-- Ikon Section -->
                 <h1 class="display-4">Dresscode</h1>
 
                 <div class="card dresscode-card" data-aos="fade-right">
                     <div class="card-body">
                         <img src="assets/img/clothing-icon.png" alt="Dresscode" class="dresscode-icon">
                         <div class="mt-3">
-                            <p class="lead">Warna: Nuansa Putih</p>
+                            <p class="lead">Warna: Putih dan Emas</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <!-- Pembatas dengan Ikon GIF -->
         <!-- Section 3: Tanggal -->
         <section id="tanggal" class="section-content" data-aos="fade-up">
             <<div class="container text-center position-relative">
+
                 <h1 class="display-4">Countdown</h1>
                 <div id="countdown" class="countdown" data-aos="fade-left">
                     <div class="countdown-item">
@@ -162,7 +187,7 @@
                 <!-- Konten lainnya seperti Google Maps, dll -->
                 <p class="lead"><strong>Acara akan dimulai pada:</strong></p>
                 <p class="lead"><strong>Hari:</strong> Sabtu, 15 Maret 2025</p>
-                <p class="lead"><strong>Waktu:</strong> 17.00 - Selesai</p>
+                <p class="lead"><strong>Waktu:</strong> 17.00 - 21.00</p>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.769808844662!2d107.61428677499642!3d-6.918100393081511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e76126ec9dbb%3A0x57e2c0cac6bb88de!2sKedai%20Kopi%20Ambara%20Biru!5e0!3m2!1sen!2sid!4v1741290378806!5m2!1sen!2sid"
                     width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -184,27 +209,23 @@
                         <!-- Card Kecil 1 -->
                         <div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="zoom-in">
                             <div class="card h-100"> <!-- Card untuk Foto 1 -->
-                                <img src="./assets/img/Foto1.jpg" alt="Foto 1"
-                                    class="card-img-top img-fluid landscape">
+                                <img src="./assets/img/Foto1.jpg" alt="Foto 1" class="card-img-top img-fluid landscape">
                             </div>
                         </div>
                         <!-- Card Kecil 2 -->
                         <div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="zoom-in-up">
                             <div class="card h-100"> <!-- Card untuk Foto 2 -->
-                                <img src="./assets/img/Foto2.jpg" alt="Foto 2"
-                                    class="card-img-top img-fluid landscape">
+                                <img src="./assets/img/Foto2.jpg" alt="Foto 2" class="card-img-top img-fluid landscape">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="zoom-in-down">
                             <div class="card h-100"> <!-- Card untuk Foto 3 -->
-                                <img src="./assets/img/Foto3.jpg" alt="Foto 3"
-                                    class="card-img-top img-fluid landscape">
+                                <img src="./assets/img/Foto3.jpg" alt="Foto 3" class="card-img-top img-fluid landscape">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="zoom-in-left">
                             <div class="card h-100"> <!-- Card untuk Foto 4 -->
-                                <img src="./assets/img/Foto4.jpg" alt="Foto 4"
-                                    class="card-img-top img-fluid landscape">
+                                <img src="./assets/img/Foto4.jpg" alt="Foto 4" class="card-img-top img-fluid landscape">
                             </div>
                         </div>
                         <!-- Tambahkan lebih banyak card sesuai kebutuhan -->
@@ -217,7 +238,7 @@
         <section id="forum" class="section-content" data-aos="fade-up">
             <div class="container text-center">
                 <div class="forum-box">
-                    <h1 class="display-4">Forum Diskusi Santai</h1>
+                    <h1 class="display-4">Forum Diskusi</h1>
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-12">
                             <form id="presensi-form" class="mb-4">
@@ -239,14 +260,16 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="komentar" class="d-flex align-items-center">
-                                        <i class="fas fa-comment me-2"></i> Gass Komen 
+                                        <i class="fas fa-comment me-2"></i> Hayu Komen
                                     </label>
                                     <textarea id="komentar" class="form-control" placeholder="Komentar Anda" rows="3"
                                         required></textarea>
                                 </div>
                                 <p class="pengingat small mb-3" data-aos="fade-up" data-aos-delay="200">
-                                    *Form ini bukan buat konfirmasi kehadiran ya, tapi diskusi santai aja. Kehadiran ada di halaman awal. Terima kasih :)
+                                    *Form ini bukan buat konfirmasi kehadiran ya, tapi diskusi santai aja. Kehadiran ada
+                                    di halaman awal. Terima kasih :)
                                 </p>
+
                                 <button type="submit" class="btn btn-primary btn-block">
                                     <i class="fas fa-paper-plane"></i> Kirim
                                 </button>
@@ -373,10 +396,19 @@
                 });
 
                 setTimeout(() => {
+                    // Sembunyikan main content
                     document.getElementById('main-content').style.display = 'none';
-                    document.getElementById('second-page').style.display = 'block';
-                    document.getElementById('second-page').style.opacity = '1';
 
+                    // Tampilkan second page
+                    const secondPage = document.getElementById('second-page');
+                    secondPage.style.display = 'block';
+                    secondPage.style.opacity = '1';
+
+                    // Tambahkan kelas dark-mode ke body
+                    document.body.classList.add('dark-mode');
+
+                    const darkModeToggle = document.getElementById('dark-mode-toggle');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
                     // Auto-play music
                     const music = document.getElementById('background-music');
                     music.play();
@@ -394,7 +426,6 @@
                     });
 
                     // Dark mode toggle
-                    const darkModeToggle = document.getElementById('dark-mode-toggle');
                     darkModeToggle.addEventListener('click', () => {
                         document.body.classList.toggle('dark-mode');
                         if (document.body.classList.contains('dark-mode')) {
@@ -409,7 +440,7 @@
             // Save to Google Calendar
             window.saveToCalendar = function () {
                 const eventTitle = "Acara Buka Puasa Bersama";
-                const eventDate = "20250315T100000Z"; // 15 Maret 2025, 17:30 WIB (10:30 UTC)
+                const eventDate = "20250315T103000Z"; // 15 Maret 2025, 17:30 WIB (10:30 UTC)
                 const eventEndDate = "20250315T140000Z"; // 15 Maret 2025, 21:00 WIB (UTC+7)
                 const eventLocation = "Kedai Kopi Ambara Biru";
                 const eventDetails = "Acara buka puasa bersama dalam rangka menyambut bulan suci Ramadhan bersama Creavill Bandung.";
@@ -559,6 +590,47 @@
                     }
                 });
             });
+            // Di dalam script Anda, setelah loading screen selesai
+            window.addEventListener('load', function () {
+                const desktopVideo = document.getElementById('desktop-video');
+                const mobileVideo = document.getElementById('mobile-video');
+
+                // Mulai memutar video setelah loading selesai
+                desktopVideo.play();
+                mobileVideo.play();
+            });
+            // Fungsi untuk membuat meteor
+            function getRandomColor() {
+                const colors = ['#FF6B6B', '#4ECDC4', '#FFEE58', '#AB47BC', '#29B6F6', '#FFA726'];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+            // Fungsi untuk membuat meteor
+            function createMeteor() {
+                const meteor = document.createElement('div');
+                meteor.classList.add('meteor');
+                meteor.style.left = `${Math.random() * 100}vw`;
+                meteor.style.top = `${Math.random() * 100}vh`;
+                meteor.style.animationDuration = `${Math.random() * 2 + 1}s`;
+
+                // Sesuaikan warna meteor berdasarkan mode
+                if (document.body.classList.contains('dark-mode')) {
+                    meteor.style.backgroundColor = '#FFFFFF'; // Warna putih untuk mode gelap
+                    meteor.style.boxShadow = '0 0 15px 5px rgba(255, 255, 255, 0.9)';
+                } else {
+                    meteor.style.backgroundColor = '#FFD700'; // Warna kuning untuk mode terang
+                    meteor.style.boxShadow = '0 0 15px 5px rgba(255, 215, 0, 0.9)';
+                }
+
+                document.body.appendChild(meteor);
+
+                // Hapus meteor setelah animasi selesai
+                setTimeout(() => {
+                    meteor.remove();
+                }, 3000);
+            }
+
+            // Buat meteor setiap 500ms
+            setInterval(createMeteor, 100);
         </script>
 </body>
 
