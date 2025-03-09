@@ -1,76 +1,223 @@
+/* Section Icons */
+.section-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  z-index: 1;
+  animation: float 6s infinite ease-in-out;
+}
+
+.container.text-center.position-relative {
+  position: relative;
+}
 
 /* Style dasar tombol */
 .custom-btn-awal {
-    background-color: #007bff; /* Warna biru */
-    color: white; /* Warna teks putih */
-    border: none; /* Hilangkan border */
-    padding: 10px 20px; /* Padding untuk ukuran tombol */
-    border-radius: 5px; /* Sudut tombol yang sedikit melengkung */
-    cursor: pointer; /* Ubah kursor saat dihover */
-    transition: background-color 0.3s ease; /* Transisi perubahan warna */
+  background-color: #73451d; /* Warna biru */
+  color: white; /* Warna teks putih */
+  border: none; /* Hilangkan border */
+  padding: 10px 20px; /* Padding untuk ukuran tombol */
+  border-radius: 5px; /* Sudut tombol yang sedikit melengkung */
+  cursor: pointer; /* Ubah kursor saat dihover */
+  transition: background-color 0.3s ease; /* Transisi perubahan warna */
 }
 
 /* Style saat tombol dihover */
 .custom-btn-awal:hover {
-    background-color: #000000; /* Warna hitam saat dihover */
+  background-color: #ffffff; /* Warna hitam saat dihover */
 }
 
 /* Style saat tombol diklik */
 .custom-btn-awal:active {
-    background-color: #000000; /* Warna hitam saat diklik */
-    transform: scale(0.98); /* Efek tekan saat diklik */
+  background-color: #000000; /* Warna hitam saat diklik */
+  transform: scale(0.98); /* Efek tekan saat diklik */
 }
 
-/* Pesan Pengingat */
-.pengingat {
-    color: #6c757d; /* Warna teks abu-abu untuk mode terang */
-    font-size: 14px; /* Ukuran teks */
-    margin-bottom: 16px; /* Jarak bawah */
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pastikan video menutupi seluruh layar */
+  z-index: -1; /* Pastikan video di belakang konten */
+  filter: brightness(0.6); /* Menggelapkan video dan meningkatkan kontras */
 }
 
-/* Mode Gelap untuk Pesan Pengingat */
-body.dark-mode .pengingat {
-    color: #a8a8a8; /* Warna teks abu-abu muda untuk mode gelap */
-}
-/* Section Icons */
-.section-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.8;
-    z-index: 1;
-    animation: float 6s infinite ease-in-out;
+/* Sembunyikan video mobile secara default */
+#mobile-video {
+  display: none;
 }
 
-.left-icon {
-    left: -60px; /* Posisi di kiri */
+#main-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 20vh;
 }
 
-.right-icon {
-    right: -60px; /* Posisi di kanan */
+/* Tampilkan video mobile dan sembunyikan video desktop di layar kecil */
+@media (max-width: 768px) {
+  #desktop-video {
+    display: none;
+  }
+  #mobile-video {
+    display: block;
+  }
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(-50%) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-60%) rotate(10deg);
-    }
+  0%,
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-60%) rotate(10deg);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .section-icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .left-icon {
-        left: -40px;
-    }
-
-    .right-icon {
-        right: -40px;
-    }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+  }
 }
+/* Pesan Pengingat */
+.pengingat {
+  color: #6c757d; /* Warna teks abu-abu untuk mode terang */
+  font-size: 14px; /* Ukuran teks */
+  margin-bottom: 16px; /* Jarak bawah */
+}
+
+/* Mode Gelap untuk Pesan Pengingat */
+body.dark-mode .pengingat {
+  color: #a8a8a8; /* Warna teks abu-abu muda untuk mode gelap */
+}
+
+/* icon section-------------------------------- */
+.love-icon {
+  position: absolute;
+  width: 70px; /* Sesuaikan ukuran sesuai kebutuhan */
+  height: auto;
+  animation: float 4s infinite ease-in-out;
+  z-index: 1; /* Pastikan ikon love di atas konten lain */
+}
+
+/* Mode Gelap: Ubah Warna GIF */
+.dark-mode .love-icon {
+  filter: brightness(0.8) invert(1); /* Sesuaikan filter sesuai kebutuhan */
+}
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .love-icon {
+      width: 50px; /* Ukuran lebih kecil di mobile */
+  }
+}
+
+/* Animasi untuk Ikon Pertama (Gerakan Vertikal) */
+@keyframes floatVertical {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+/* Animasi untuk Ikon Kedua (Gerakan Horizontal) */
+@keyframes floatHorizontal {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-20px);
+  }
+}
+
+/* Terapkan Animasi Vertikal ke Ikon Pertama */
+.float-vertical {
+  animation: floatVertical 3s infinite ease-in-out;
+}
+
+/* Terapkan Animasi Horizontal ke Ikon Kedua */
+.float-horizontal {
+  animation: floatHorizontal 3s infinite ease-in-out;
+}
+
+/* Batas icon section-------------------------------- */
+
+@keyframes float {
+  0%, 100% {
+      transform: translate(0, 0);
+  }
+  25% {
+      transform: translate(-10px, -10px);
+  }
+  50% {
+      transform: translate(10px, -20px);
+  }
+  75% {
+      transform: translate(-10px, -10px);
+  }
+}
+
+/* INI BATIK */
+/* Animasi Meteor */
+/* Animasi Meteor */
+@keyframes meteor {
+  0% {
+      transform: translateY(-100%) translateX(-100%) rotate(45deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) translateX(100vw) rotate(45deg);
+      opacity: 0;
+  }
+}
+
+.meteor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8),
+              0 0 20px 4px rgba(255, 255, 255, 0.6),
+              0 0 30px 6px rgba(255, 255, 255, 0.4);
+  animation: meteor 3s linear infinite;
+  z-index: -1; /* Pastikan meteor berada di belakang konten */
+}
+
+ /* Mode Terang */
+ body.light-mode {
+  background: linear-gradient(to bottom, #FFFFFF, #F0F0F0);
+  color: black;
+}
+body.light-mode .meteor {
+  background-color: #FFD700; /* Warna kuning cerah */
+  box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.8),
+              0 0 20px 4px rgba(255, 215, 0, 0.6),
+              0 0 30px 6px rgba(255, 215, 0, 0  .4);
+  filter: brightness(1.8) contrast(2); /* Meningkatkan kecerahan dan kontras */
+} 
+/* Mode Gelap */
+body.dark-mode .meteor {
+  background-color: #FFFFFF; /* Warna meteor di mode gelap */
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8),
+              0 0 20px 4px rgba(255, 255, 255, 0.6),
+              0 0 30px 6px rgba(255, 255, 255, 0.4);
+}
+
+/* Mode Terang */
+body.light-mode .meteor {
+  background-color: #FF6B6B; /* Warna meteor di mode terang */
+  box-shadow: 0 0 10px 2px rgba(255, 107, 107, 0.8),
+              0 0 20px 4px rgba(255, 107, 107, 0.6),
+              0 0 30px 6px rgba(255, 107, 107, 0.4);
+}
+
+/* BATAS BATIK */
