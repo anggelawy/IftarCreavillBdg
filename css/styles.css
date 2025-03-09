@@ -1,0 +1,809 @@
+html,
+body {
+  font-family: "Josefin Sans", sans-serif; /* Jenis font untuk teks biasa */
+  /* background-color: white; Background putih di mode terang */
+  color: black; /* Warna teks default hitam */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Hilangkan overflow horizontal */
+}
+
+body.dark-mode {
+  background-color: #1a1a1a; /* Background hitam di mode gelap */
+  color: #f0e6d2; /* Font putih di mode gelap */
+}
+
+/* Mode Gelap untuk Dresscode Card */
+body.dark-mode .dresscode-card {
+  background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan di mode gelap */
+  color: #f0e6d2; /* Font putih untuk card */
+}
+
+body.dark-mode .dresscode-icon {
+  filter: brightness(0) invert(1); /* Mengubah ikon menjadi putih */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sacramento", cursive; /* Jenis font untuk judul */
+  font-weight: bold; /* Bold untuk semua judul */
+  color: rgb(0, 0, 0); /* Warna hitam untuk judul di mode terang */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f0e6d2; /* Warna putih untuk judul di mode gelap */
+}
+/* Smooth scroll untuk seluruh halaman */
+/* Button Hover Effect */
+.btn-primary,
+.btn-secondary {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Putih transparan saat hover */
+  color: white; /* Warna teks putih saat hover */
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  background-color: white; /* Putih saat diklik */
+  color: black; /* Warna teks hitam saat diklik */
+}
+
+/* Tombol Save to Google Calendar dan Daftar Iftar */
+.btn-custom {
+  background-color: rgba(255, 255, 255, 0.8); /* Putih transparan */
+  border: 1px solid black; /* Border hitam */
+  color: black; /* Teks hitam */
+  border-radius: 25px; /* Rounded border */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px 20px; /* Padding untuk tombol */
+  font-size: 16px; /* Ukuran font */
+}
+
+.btn-custom-contact {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Latar belakang putih transparan */
+  border: 1px solid #25d366; /* Border hijau WhatsApp */
+  color: #25d366; /* Warna teks hijau WhatsApp */
+  border-radius: 15px; /* Sudut tombol membulat (bisa disesuaikan) */
+  padding: 5px 10px; /* Padding tombol (bisa disesuaikan) */
+  font-size: 14px; /* Ukuran font (bisa disesuaikan) */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+  display: inline-flex; /* Agar ikon dan teks sejajar */
+  align-items: center; /* Pusatkan ikon dan teks secara vertikal */
+}
+
+.btn-custom-contact:hover {
+  background-color: #25d366; /* Latar belakang hijau saat hover */
+  color: white; /* Warna teks putih saat hover */
+  transform: translateY(-2px); /* Efek naik sedikit saat hover */
+}
+
+.label-center {
+  font-weight: bold; /* Teks bold */
+  text-align: center; /* Rata tengah */
+  display: block; /* Agar label mengambil lebar penuh */
+  margin-bottom: 10px; /* Jarak bawah */
+}
+
+/* Mode Gelap untuk Tombol WhatsApp */
+body.dark-mode .btn-custom-contact {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Latar belakang hitam transparan di mode gelap */
+  border: 1px solid #25d366; /* Border hijau WhatsApp */
+  color: #25d366; /* Warna teks hijau WhatsApp */
+}
+
+body.dark-mode .btn-custom-contact:hover {
+  background-color: #25d366; /* Latar belakang hijau saat hover di mode gelap */
+  color: white; /* Warna teks putih saat hover di mode gelap */
+}
+.btn-custom:hover,
+.btn-custom:active {
+  background-color: black; /* Hitam saat dihover/ditekan */
+  color: white; /* Teks putih saat dihover/ditekan */
+}
+
+/* Mode Gelap untuk Tombol Custom */
+body.dark-mode .btn-custom {
+  background-color: rgba(0, 0, 0, 0.8); /* Hitam transparan di mode gelap */
+  border: 1px solid #f0e6d2; /* Border putih di mode gelap */
+  color: black; /* Teks hitam di mode gelap */
+}
+
+/* Hover dan Active untuk Tombol Custom di Mode Gelap */
+body.dark-mode .btn-custom:hover,
+body.dark-mode .btn-custom:active {
+  background-color: #f0e6d2; /* Warna putih saat dihover/ditekan */
+  color: black; /* Teks hitam saat dihover/ditekan */
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0e6d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.loading-bar {
+  width: 0%;
+  height: 5px;
+  background-color: #2a6f97;
+  transition: width 0.3s ease;
+}
+
+#loading-percentage {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #2a6f97;
+}
+
+/* Mengubah warna teks di dalam #main-content menjadi putih */
+#main-content h1,
+#main-content .lead,
+#main-content p {
+  color: white;
+}
+
+#main-content,
+#second-page {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#home {
+  height: 100vh; /* Tinggi section menyesuaikan tinggi layar */
+  background-image: url("assets/img/background.jpg"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Gambar menyesuaikan layar */
+  background-position: center; /* Posisi gambar di tengah */
+  display: flex;
+  align-items: center; /* Konten di tengah vertikal */
+  justify-content: center; /* Konten di tengah horizontal */
+  position: relative; /* Untuk overlay */
+}
+
+#home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Overlay hitam transparan */
+  z-index: 1; /* Pastikan overlay di belakang konten */
+}
+
+#home .container {
+  position: relative; /* Pastikan konten di atas overlay */
+  z-index: 2;
+  color: white; /* Warna teks putih */
+}
+
+/* Jarak antara Dresscode dan Countdown */
+#dresscode {
+  margin-bottom: 100px;
+  margin-top: 100px; /* Sesuaikan jarak */
+}
+
+/* Countdown Section */
+#tanggal {
+  margin-top: 50px; /* Opsional, jika ingin menambahkan margin-top */
+}
+
+/* Galeri Section */
+#galeri {
+  padding-top: 50px; /* Jarak dengan section di atasnya */
+  padding-bottom: 50px; /* Jarak dengan section di bawahnya */
+  min-height: 100vh; /* Tinggi minimal section galeri */
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.music-player,
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 80px; /* Adjusted for bottom navigation */
+}
+
+.music-player {
+  right: 20px;
+}
+
+.dark-mode-toggle {
+  left: 20px;
+}
+/* Mode Gelap untuk Ikon Matahari dan Play/Pause */
+body.dark-mode .fa-moon,        /* Ikon bulan (dark mode) */
+body.dark-mode .fa-sun,         /* Ikon matahari (light mode) */
+body.dark-mode .fa-play,        /* Ikon play */
+body.dark-mode .fa-pause {
+  /* Ikon pause */
+  color: white; /* Warna ikon putih di mode gelap */
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.bottom-nav .nav-item {
+  color: black; /* Warna teks hitam untuk nav item */
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-nav .nav-item.active {
+  color: #1b4965;
+  font-weight: bold;
+}
+
+.bottom-nav .nav-item i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+/* Set tinggi setiap section ke 100vh */
+.section-content {
+  /* Hapus height: 100vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Pastikan konten di dalam section tidak terlalu panjang */
+.section-content .container {
+  max-width: 800px; /* Lebar maksimal konten */
+  width: 100%;
+  text-align: center; /* Teks di tengah */
+}
+
+/* Mode Gelap untuk setiap section */
+body.dark-mode .section-content {
+  background-color: #1a1a1a00; /* Background hitam untuk setiap section */
+  color: #f0e6d2; /* Font putih untuk setiap section */
+}
+
+/* Background Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Overlay hitam transparan */
+  z-index: 1; /* Pastikan overlay di belakang konten */
+}
+
+body.dark-mode .overlay {
+  background: rgba(0, 0, 0, 0.5); /* Hitam samar-samar */
+}
+
+/* Home Section */
+body .section-content h1,
+body .section-content p,
+body .section-content button {
+  position: relative; /* Pastikan teks dan tombol di atas overlay */
+  z-index: 2; /* Pastikan teks dan tombol di atas overlay */
+  color: black; /* Warna teks default hitam */
+  font-weight: normal; /* Normal untuk teks biasa */
+}
+
+body.dark-mode .section-content h1,
+body.dark-mode .section-content p,
+body.dark-mode .section-content button {
+  color: #f0e6d2; /* Warna teks putih di mode gelap */
+}
+
+/* Quotes */
+blockquote {
+  font-size: 1.5em;
+  margin: 20px 0;
+  margin-top: 100px;
+  color: black;
+  position: relative; /* Posisi relatif untuk memastikan z-index bekerja */
+  z-index: 2; /* Z-index lebih tinggi dari ikon section */
+}
+/* Mode Gelap untuk Bacaan "Puasa adalah perisai" */
+body.dark-mode blockquote {
+  color: white; /* Warna teks putih di mode gelap */
+}
+body.dark-mode blockquote footer {
+  color: #f0e6d2;
+  position: relative; /* Posisi relatif untuk memastikan z-index bekerja */
+    z-index: 2; /* Z-index lebih tinggi dari ikon section */
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Jarak antar item countdown */
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5em;
+}
+
+body.dark-mode .countdown {
+  background-color: rgba(0, 0, 0, 0.7); /* Background gelap untuk countdown */
+  color: #f0e6d2; /* Font putih untuk countdown */
+  border: 2px solid white; /* Border putih di mode gelap */
+}
+
+.countdown-item {
+  text-align: center;
+  font-size: 1em;
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+/* Galeri */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  width: 100%; /* Gambar mengisi penuh card */
+  height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+  border-radius: 10px; /* Sudut membulat untuk gambar */
+}
+
+/* Card untuk Kalimat di Bagian Home */
+.card-custom {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Putih transparan di mode terang */
+  backdrop-filter: blur(5px); /* Efek blur */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Padding dalam card */
+  margin: 20px auto; /* Margin untuk posisi card */
+  max-width: 600px; /* Lebar maksimal card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek depth */
+}
+
+body.dark-mode .card-custom {
+  background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan di mode gelap */
+  color: #f0e6d2; /* Warna teks putih di mode gelap */
+}
+
+/* Dresscode Card */
+.dresscode-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  margin-bottom: 100px;
+  max-width: 300px; /* Sesuaikan lebar card */
+  text-align: center;
+}
+
+.dresscode-card:hover {
+  transform: translateY(-10px); /* Efek hover naik sedikit */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+.dresscode-icon {
+  width: 100px; /* Ukuran gambar */
+  height: auto;
+  border-radius: 10px; /* Rounded corners untuk gambar */
+  margin-bottom: 15px; /* Jarak antara gambar dan teks */
+}
+/* Section Forum Diskusi */
+#forum {
+  padding-top: 50px; /* Jarak dengan section di atasnya */
+  padding-bottom: 50px; /* Jarak dengan section di bawahnya */
+  overflow: hidden; /* Pastikan konten tidak keluar dari section */
+}
+
+#forum .form-control {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Tombol Kirim */
+#forum .btn-primary {
+  background-color: #25d366; /* Warna biru default Bootstrap */
+  color: white; /* Warna teks putih */
+  border: none; /* Hapus border */
+  border-radius: 10px; /* Sudut tombol membulat */
+  padding: 5px 20px; /* Padding tombol */
+  font-size: 16px; /* Ukuran font */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease; /* Efek transisi */
+}
+
+#forum .btn-primary:hover {
+  background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+  transform: translateY(-2px); /* Efek naik sedikit saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+}
+
+/* Icon di dalam tombol */
+#forum .btn-primary i {
+  margin-right: 8px; /* Jarak antara icon dan teks */
+}
+
+/* Tombol Prev dan Next */
+#forum .btn-secondary {
+  background-color: #6c757d; /* Latar belakang hitam */
+  color: white; /* Teks putih */
+  border: none; /* Hapus border */
+  border-radius: 10px; /* Sudut tombol membulat */
+  padding: 10px 20px; /* Padding tombol */
+  font-size: 16px; /* Ukuran font */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi */
+}
+
+/* Hover dan Active untuk Tombol Prev dan Next */
+#forum .btn-secondary:hover,
+#forum .btn-secondary:active {
+  background-color: white; /* Latar belakang putih saat hover */
+  color: black; /* Teks hitam saat hover */
+}
+
+/* Ikon di dalam tombol */
+#forum .btn-secondary i {
+  color: inherit; /* Warna ikon mengikuti warna teks */
+}
+
+/* Item Komentar */
+#komentar-list {
+  max-height: 300px; /* Tinggi maksimum container komentar */
+  overflow-y: auto; /* Aktifkan scroll vertikal */
+  padding: 10px;
+  border: 0px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+}
+.komentar-item {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Background putih untuk item komentar */
+  border-radius: 10px; /* Sudut membulat */
+  padding: 15px; /* Padding untuk item komentar */
+  margin-bottom: 15px; /* Jarak antar item komentar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek depth */
+  text-align: left; /* Rata kiri untuk teks */
+}
+/* Mode Gelap untuk Item Komentar */
+body.dark-mode .komentar-item {
+  background-color: #343a40; /* Background item komentar di mode gelap */
+  color: white; /* Teks putih untuk item komentar */
+}
+
+.divider {
+  border: none; /* Hapus border default */
+  height: 2px; /* Tinggi garis */
+  background-color: black; /* Warna garis */
+  margin: 10px 0; /* Jarak atas dan bawah */
+  width: 100%; /* Lebar garis memanjang penuh */
+}
+
+/* Mode Gelap untuk Garis Pemisah */
+body.dark-mode .divider {
+  background-color: white; /* Ubah warna garis menjadi putih di mode gelap */
+}
+#forum .pagination {
+  margin-top: 20px;
+}
+
+/* Box untuk Forum Diskusi */
+.forum-box {
+  border: 1px solid black; /* Border hitam untuk mode terang */
+  border-radius: 15px; /* Sudut membulat */
+  padding: 20px; /* Ruang di dalam box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek depth */
+  margin: 20px 0; /* Jarak atas dan bawah */
+}
+
+/* Mode Gelap untuk Box Forum Diskusi */
+body.dark-mode .forum-box {
+  border: 1px solid white; /* Border putih untuk mode gelap */
+  background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap untuk box */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Bayangan putih untuk efek depth */
+}
+
+/* Label untuk Form */
+.form-group label {
+  font-weight: bold; /* Bold untuk label */
+  color: black; /* Warna label default */
+}
+
+/* Mode Gelap untuk Label */
+body.dark-mode .form-group label {
+  color: #f0e6d2; /* Warna label putih di mode gelap */
+}
+
+/* Mode Gelap untuk Komentar */
+body.dark-mode .komentar-item {
+  background-color: #333; /* Background hitam untuk komentar */
+  color: #f0e6d2; /* Font putih untuk komentar */
+}
+
+.presensi {
+  color: green;
+}
+
+.presensi.tidak-hadir {
+  color: red;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px;
+}
+
+/* Mode Gelap untuk Footer */
+body.dark-mode .footer {
+  background-color: #000000; /* Background hitam untuk footer */
+  color: #f0e6d2; /* Font putih untuk footer */
+}
+
+/* Google Maps */
+.google-maps {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+/* Section Galeri */
+#galeri {
+  padding-top: 50px; /* Jarak dengan section di atasnya */
+  padding-bottom: 50px; /* Jarak dengan section di bawahnya */
+}
+
+.gallery-box {
+  border: 1px solid black; /* Border hitam untuk mode terang */
+  border-radius: 15px; /* Sudut membulat */
+  padding: 20px; /* Ruang di dalam box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek depth */
+  margin: 10px 0; /* Jarak atas dan bawah */
+  margin-bottom: 20px;
+}
+/* Mode Gelap untuk Box Galeri */
+body.dark-mode .gallery-box {
+  border: 1px solid white; /* Border putih untuk mode gelap */
+  background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap untuk box */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Bayangan putih untuk efek depth */
+}
+
+/* Card Kecil */
+#galeri .card {
+  border: none; /* Hapus border card */
+  border-radius: 15px; /* Sudut card membulat */
+  overflow: hidden; /* Pastikan gambar tidak keluar dari card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan card */
+  padding: 10px; /* Tambahkan padding untuk memberi ruang di dalam card */
+  width: 100%; /* Pastikan card mengisi lebar penuh dari kolom */
+  max-width: 400px; /* Atur lebar maksimal card (ubah sesuai kebutuhan) */
+  margin: 0 auto; /* Pusatkan card */
+  margin-top: 30px;
+}
+
+#galeri .card img {
+  width: 100%; /* Gambar mengisi penuh card */
+  height: 200px; /* Tinggi gambar yang diinginkan untuk landscape */
+  object-fit: cover; /* Pastikan gambar mengisi area tanpa distorsi */
+  margin: 0 auto; /* Pusatkan gambar */
+}
+
+/* Jarak antar card */
+#galeri .row {
+  margin: 0 -10px; /* Mengatur margin row */
+}
+
+#galeri .col-md-6 {
+  padding: 0 10px; /* Mengatur padding kolom */
+}
+
+/* Tambahkan kelas landscape untuk gambar */
+.landscape {
+  height: 200px; /* Tinggi tetap untuk gambar landscape */
+}
+/* Transparent Button */
+.transparent-btn {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.transparent-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.control-box {
+  /* position: fixed; */
+  bottom: 80px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+body.dark-mode .control-box {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.control-box .btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.control-box .btn-circle i {
+  font-size: 20px;
+  color: black;
+}
+
+body.dark-mode .control-box .btn-circle i {
+  color: white;
+}
+
+.control-box .btn-circle:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+body.dark-mode .control-box .btn-circle {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .control-box .btn-circle:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Letakkan di belakang meteor dan bintang */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-content {
+    padding: 30px 10px;
+  }
+
+  .bottom-nav .nav-item {
+    font-size: 12px;
+  }
+
+  .bottom-nav .nav-item i {
+    font-size: 18px;
+  }
+  .dresscode-card {
+    max-width: 90%; /* Lebar card menyesuaikan layar kecil */
+    padding: 15px; /* Padding lebih kecil di layar kecil */
+  }
+
+  #dresscode {
+    margin-bottom: 30px; /* Jarak lebih kecil di layar kecil */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #galeri .col-md-6 {
+    margin-bottom: 20px; /* Jarak antar card di mobile */
+
+    #forum .col-lg-8 {
+      padding: 0 15px; /* Padding untuk mobile */
+    }
+
+    #forum .komentar-item {
+      padding: 10px;
+    }
+  }
+
+  /* Responsive Design untuk Galeri */
+  @media (max-width: 768px) {
+    #galeri .card img {
+      height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+    }
+
+    #galeri .col-lg-8 {
+      width: 100%; /* Card besar memenuhi lebar layar di mobile */
+    }
+  }
+}
