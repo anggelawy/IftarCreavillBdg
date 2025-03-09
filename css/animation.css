@@ -46,6 +46,9 @@
   filter: brightness(0.6); /* Menggelapkan video dan meningkatkan kontras */
 }
 
+#quotes {
+  position: relative; /* Buat section quotes sebagai referensi posisi */
+}
 /* Sembunyikan video mobile secara default */
 #mobile-video {
   display: none;
