@@ -1,7 +1,7 @@
 html,
 body {
   font-family: "Josefin Sans", sans-serif; /* Jenis font untuk teks biasa */
-  background-color: white; /* Background putih di mode terang */
+  /* background-color: white; Background putih di mode terang */
   color: black; /* Warna teks default hitam */
   transition: background-color 0.3s ease, color 0.3s ease;
   scroll-behavior: smooth;
@@ -30,7 +30,7 @@ h5,
 h6 {
   font-family: "Sacramento", cursive; /* Jenis font untuk judul */
   font-weight: bold; /* Bold untuk semua judul */
-  color: black; /* Warna hitam untuk judul di mode terang */
+  color: rgb(0, 0, 0); /* Warna hitam untuk judul di mode terang */
 }
 
 body.dark-mode h1,
@@ -171,6 +171,13 @@ body.dark-mode .btn-custom:active {
   color: #2a6f97;
 }
 
+/* Mengubah warna teks di dalam #main-content menjadi putih */
+#main-content h1,
+#main-content .lead,
+#main-content p {
+  color: white;
+}
+
 #main-content,
 #second-page {
   opacity: 0;
@@ -309,7 +316,7 @@ body.dark-mode .fa-pause {
 
 /* Mode Gelap untuk setiap section */
 body.dark-mode .section-content {
-  background-color: #1a1a1a; /* Background hitam untuk setiap section */
+  background-color: #1a1a1a00; /* Background hitam untuk setiap section */
   color: #f0e6d2; /* Font putih untuk setiap section */
 }
 
@@ -350,6 +357,8 @@ blockquote {
   margin: 20px 0;
   margin-top: 100px;
   color: black;
+  position: relative; /* Posisi relatif untuk memastikan z-index bekerja */
+  z-index: 2; /* Z-index lebih tinggi dari ikon section */
 }
 /* Mode Gelap untuk Bacaan "Puasa adalah perisai" */
 body.dark-mode blockquote {
@@ -357,6 +366,8 @@ body.dark-mode blockquote {
 }
 body.dark-mode blockquote footer {
   color: #f0e6d2;
+  position: relative; /* Posisi relatif untuk memastikan z-index bekerja */
+    z-index: 2; /* Z-index lebih tinggi dari ikon section */
 }
 
 /* Countdown */
