@@ -750,6 +750,30 @@ body.dark-mode .control-box .btn-circle:hover {
   background-color: rgba(0, 0, 0, 1);
 }
 
+.map-container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ffffff; /* Border dengan ketebalan 5px dan warna abu-abu */
+  border-radius: 10px; /* Sudut border yang melengkung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  overflow: hidden; /* Pastikan konten di dalam iframe tidak keluar dari border */
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+      height: 300px; /* Tinggi lebih kecil untuk mobile */
+      border-width: 1px; /* Border lebih tipis untuk mobile */
+  }
+}
+
+/* Optional: Tambahkan hover effect */
+.map-container:hover {
+  border-color: #bdc0c4; /* Ubah warna border saat dihover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efek bayangan lebih besar saat dihover */
+}
+
+
 #background-video {
   position: fixed;
   top: 0;
